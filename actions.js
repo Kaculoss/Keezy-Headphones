@@ -1,0 +1,8 @@
+export const INCREASE_QTY = "INCREASE_QTY";
+export const DECREASE_QTY = "DECREASE_QTY";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const SET_SHOW_CART_TRUE = "SET_SHOW_CART_TRUE";
+export const SET_SHOW_CART_FALSE = "SET_SHOW_CART_FALSE";
+export const UPDATE_CART_ITEM_QTY = "UPDATE_CART_ITEM_QTY";
+export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
+export const RESET_STATE = "RESET_STATE";
