@@ -11,7 +11,7 @@ const Product = ({ product: { image, name, slug, price } }) => {
             image={image && image[0]}
             alt="product-image"
             className="product-image"
-            style={{ width: "250px", height: "250px" }}
+            style={{ width: "200px", height: "200px" }}
           />
           <p className="product-name">{name}</p>
           <p className="product-price">GH&#8373; {price}</p>

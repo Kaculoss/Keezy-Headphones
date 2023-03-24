@@ -1,3 +1,10 @@
+:root {
+  --gap: 1.5rem;
+  --duration: 30s;
+  --scroll-start: 20%;
+  --scroll-end: calc(-100% - var(--gap));
+}
+
 html,
 body,
 * {
@@ -44,6 +51,42 @@ a {
   overflow-x: hidden;
 }
 
+.marquee-wrapper1 {
+  margin: auto;
+  max-width: 100%;
+  overflow: hidden;
+}
+.marquee1 {
+  display: flex;
+  gap: var(--gap);
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.marquee-group1 {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  animation: scroll-left var(--duration) linear infinite;
+}
+/* .marquee1:hover .marquee-group1 {
+  animation-play-state: paused;
+} */
+.marquee-group1:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(var(--scroll-start));
+  }
+  to {
+    transform: translateX(var(--scroll-end));
+  }
+}
+
 .track {
   position: absolute;
   white-space: nowrap;
@@ -59,7 +102,7 @@ a {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(calc(-100% - 15px));
   }
 }
 
@@ -429,10 +472,17 @@ span.text-red {
 .product-detail-image:hover {
   background-color: #f02d34;
 }
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
 .small-images-container {
   display: flex;
   gap: 10px;
   margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .small-image {
   border-radius: 8px;

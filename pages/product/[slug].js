@@ -2,6 +2,7 @@ import { NextSanityImage, Product } from "@/components";
 import { useStateContext } from "@/context/StateContext";
 import { client } from "@/lib/client";
 import React, { useState } from "react";
+import Marquee from "react-fast-marquee";
 import {
   AiFillStar,
   AiOutlineMinus,
@@ -90,11 +91,26 @@ const ProductDetails = ({ product, products }) => {
 
       <div className="maylike-products-wrapper">
         <h2>You may also like</h2>
-        <div className="marquee">
+        {/* <div className="marquee">
           <div className="maylike-products-container track">
             {products.map((item) => {
               return <Product key={item._id} product={item} />;
             })}
+          </div>
+        </div> */}
+
+        <div className="marquee-wrapper1">
+          <div className="marquee1">
+            <div className="marquee-group1">
+              {products.map((item) => {
+                return <Product key={item._id} product={item} />;
+              })}
+            </div>
+            {/* <div aria-hidden className="marquee-group1">
+              {products.map((item) => {
+                return <Product key={item._id} product={item} />;
+              })}
+            </div> */}
           </div>
         </div>
       </div>
