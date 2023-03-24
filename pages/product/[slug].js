@@ -2,7 +2,6 @@ import { NextSanityImage, Product } from "@/components";
 import { useStateContext } from "@/context/StateContext";
 import { client } from "@/lib/client";
 import React, { useState } from "react";
-import Marquee from "react-fast-marquee";
 import {
   AiFillStar,
   AiOutlineMinus,
@@ -119,7 +118,7 @@ const ProductDetails = ({ product, products }) => {
 };
 
 export const getStaticPaths = async () => {
-  const query = `*[_type == "product"] {
+  const query = `*[_type == "oldProduct"] {
       slug {
          current
       }
@@ -136,8 +135,8 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params: { slug } }) => {
-  const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
-  const productQuery = '*[_type == "product"]';
+  const query = `*[_type == "oldProduct" && slug.current == '${slug}'][0]`;
+  const productQuery = '*[_type == "oldProduct"]';
 
   const product = await client.fetch(query);
   const products = await client.fetch(productQuery);
